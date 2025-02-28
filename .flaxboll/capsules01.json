@@ -11096,7 +11096,7 @@
       "capsCodeID": "ccc_project",
       "capsCodeVersionID": "1",
       "capsUpdatedAt": [1724369467712],
-      "capsUseLabel": { "pt-br": "Project", "en": "test1-dev1" },
+      "capsUseLabel": { "pt-br": "Project", "en": "Novo Projeto" },
       "capsUseDescription": { "pt-br": "", "en": "" },
       "capsUseInputs": {
         "ccc_project-0": {
