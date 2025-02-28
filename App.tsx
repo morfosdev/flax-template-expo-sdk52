@@ -1,4 +1,3 @@
-import "react-native-polyfill-globals/auto";
 import React from "react";
 import { Router } from "./src";
 import { StatusBar } from "expo-status-bar";
