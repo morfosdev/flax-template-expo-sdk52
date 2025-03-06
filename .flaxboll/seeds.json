@@ -424,7 +424,7 @@
                 "pt-br": "",
                 "en": ""
               },
-              "capsIptCapsDfCode": "{}",
+              "capsIptCapsDfCode": "'{}'",
               "capsIptCapsTypesToAdd": ["string process"]
             }
           },
@@ -516,7 +516,7 @@
           "en": "A React component for displaying different types of images"
         },
         "capsCodeTypes": ["Elemento de Tela", "Image"],
-        "capsCodeText": "\n\n    (...args:any) => <Elements.ImageBox pass={{\n      elementsProperties:[!#!1!#!],\n\n      styles:[!#!2!#!],\n\n      URIvariablePath:['!#!3!#!'],\n\n      args,\n    }}/>",
+        "capsCodeText": "\n\n    (...args:any) => <Elements.ImageBox pass={{\n      elementsProperties:[!#!1!#!],\n\n      styles:[!#!2!#!],\n\n      URIvariablePath:[!#!3!#!],\n\n      args,\n    }}/>",
         "capsCodeInputs": {
           "ccc_image-0": {
             "capsIptCodeID": "ccc_image-0",
@@ -620,8 +620,8 @@
                 "pt-br": "",
                 "en": ""
               },
-              "capsIptCapsDfCode": "{}",
-              "capsIptCapsTypesToAdd": ["Propriedade Texto"]
+              "capsIptCapsDfCode": "'{}'",
+              "capsIptCapsTypesToAdd": ["string process"]
             }
           },
           "ccc_text-1": {
