@@ -237,7 +237,7 @@
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ width: 40, height: 40 }`],
+            styles:[`{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }`],
 
             functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
       componentSvg: (Svg:any, SvgObj:any) => {
@@ -290,7 +290,7 @@
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ width: 40, height: 40 }`],
+            styles:[`{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }`],
 
             functions:[()=>{}],            childrenItems:[() =><></>],
 
