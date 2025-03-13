@@ -262,9 +262,9 @@
         <svg></svg>
       `,
 
-      altura: "30px",
+      altura: "10px",
 
-      largura: "30px",
+      largura: "10px",
 
       preenchimento: ['black'],
 
