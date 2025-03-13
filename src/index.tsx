@@ -369,14 +369,11 @@
         
           ],
 
-      styles:[
-              {
-                backgroundColor: 'white',
-                justifyContent: 'center',
-                minHeight: 22,
-                width: "100%",
-              }
-              ],    args,
+      styles:[`{ backgroundColor: "rgb(255, 255, 255)",
+    justifyContent: "flex-start",
+    minHeight: 22,
+    width: "100%"
+}`],    args,
         }}/>],
 
             args,
