@@ -226,6 +226,7 @@
           styles:[`{ backgroundColor: "white", flex: 1 }`],
 
           screenElements:[
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -314,6 +315,69 @@
             args,
           }}/>
         ],
+
+            args,
+          }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ flex: 1,  padding: 20 }`],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.FlatList2 pass={{
+          elementProperties: [
+            {}
+          ],
+
+          pData: `all.lists.lst2`,
+
+          itemElements: [
+            
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `$arg_name`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        
+          ],
+
+      styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],    args,
+        }}/>],
 
             args,
           }}/>
@@ -437,7 +501,8 @@
 'cond1': false, 
 'func1': (nativeEvent)=>console.log(nativeEvent), 
 'Comp1': <RN.Text style={{color: "darkred"}}>---</RN.Text>, 
-'lists': { 'lt1': [{name: "João", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{name: "Luciana"},{name: "Pedro"}] } 
+'lists': { 
+'lt1': [{name: "João", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{name: "Luciana"},{name: "Pedro"}], 'lst2': [{name: "Task 1"},{name: "Task2"}] } 
 , 
 'name': "Name:", 'dataToSet': {name: "Carlos", phone: "1111"} } 
  
