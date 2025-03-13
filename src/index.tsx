@@ -268,7 +268,7 @@
 
       largura: "14px",
 
-      preenchimento: ['black'],
+      preenchimento: [`black`],
 
       args,
     }}/>],
