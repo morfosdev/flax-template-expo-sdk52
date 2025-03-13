@@ -218,9 +218,114 @@
 
           args,
         }}/>, 
+        
 
         (...args: any) => <Elements.Screen3 pass={{
           pathScreen:"sc3",
+
+          styles:[`{ backgroundColor: "white", flex: 1 }`],
+
+          screenElements:[
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ backgroundColor: "orange", width: "100%", flexDirection: "row" }`],
+
+            functions:[()=>{}],            childrenItems:[
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }`],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
+      componentSvg: (Svg:any, SvgObj:any) => {
+        const { Defs, Stop, Path, LinearGradient, G, Circle, Rect, Mask } = SvgObj;
+        return (props:any) => (  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={14}
+    height={14}
+    fill="red"
+    viewBox="0 0 14 14"
+    {...props}
+  >
+    <Path
+      stroke="#FF7262"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M13.5 2H.5M13.5 7H.5M13.5 12H.5"
+    />
+  </Svg>)
+      },
+
+      svgOriginal: `
+        <svg></svg>
+      `,
+
+      altura: "14px",
+
+      largura: "14px",
+
+      preenchimento: ['black'],
+
+      args,
+    }}/>],
+
+            args,
+          }}/>
+        , 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ flex: 1, justifyContent: "center" }`],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: "black", fontSize: 16 }
+          ],
+
+          children: [
+            `Todo List`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }`],
+
+            functions:[()=>{}],            childrenItems:[() =><></>],
+
+            args,
+          }}/>
+        ],
+
+            args,
+          }}/>
+        ],
+
+          functions:[()=>{}],
+
+          args,
+        }}/>, 
+
+        (...args: any) => <Elements.Screen3 pass={{
+          pathScreen:"sc4",
 
           styles:[`{ backgroundColor: "white", flex: 1 }`],
 
