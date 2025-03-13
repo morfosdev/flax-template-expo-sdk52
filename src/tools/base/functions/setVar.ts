@@ -68,6 +68,8 @@ const testArgs = (children, args) => {
   let condChildren = '';
   let newArgChildren = 'undefined';
 
+  console.log({ children });
+
   const joinedChild = children.join();
   if (joinedChild.includes('$var_')) condChildren = 'var';
   if (joinedChild.includes('$arg_')) condChildren = 'arg';
