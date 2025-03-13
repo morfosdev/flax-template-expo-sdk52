@@ -252,7 +252,7 @@
     {...props}
   >
     <Path
-      stroke="#FF7262"
+      stroke="#000"
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M13.5 2H.5M13.5 7H.5M13.5 12H.5"
