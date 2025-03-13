@@ -222,30 +222,55 @@
         (...args: any) => <Elements.Screen3 pass={{
           pathScreen:"sc3",
 
-          styles:[
-              {
-                backgroundColor: '#101',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-                width: '100%',
-              }
-              ],
+          styles:[`{ backgroundColor: "white", flex: 1 }`],
 
-          screenElements:[() => {
-                  const textStyle = {
-                    fontSize: 20,
-                    color: '#fff2',
-                    textAlign:'center',
-                    maxWidth: 200,
-                    // maxWidth: '200px'<= #ATTENTION: Native ERROR! No string!
-                  };
+          screenElements:[
 
-                  return (
-                    <RN.Text style={textStyle}>
-                      {'Adicione Elementos nessa tela!'}
-                    </RN.Text>);
-                }],
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ backgroundColor: "orange", width: "100%", flexDirection: "row" }`],
+
+            functions:[()=>{}],            childrenItems:[
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 40, height: 40 }`],
+
+            functions:[()=>{}],            childrenItems:[() =><></>],
+
+            args,
+          }}/>
+        , 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ flex: 1 }`],
+
+            functions:[()=>{}],            childrenItems:[() =><></>],
+
+            args,
+          }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 40, height: 40 }`],
+
+            functions:[()=>{}],            childrenItems:[() =><></>],
+
+            args,
+          }}/>
+        ],
+
+            args,
+          }}/>
+        ],
 
           functions:[()=>{}],
 
