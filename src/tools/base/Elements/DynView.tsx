@@ -67,13 +67,12 @@ export const DynView = (props: Tprops) => {
 
   // ------- set User Element Properties (If Exists)
   const userElProps: any = {};
-
-  for (const strObj of elementsProperties) {
+  for (let strObj of elementsProperties) {
     if (!strObj) continue;
     if (!props) continue;
+    if (typeof strObj !== 'string') continue;
 
     console.log('BOX', { strObj });
-
     const parsedObject = JSON5.parse(strObj);
 
     for (const keyProp in parsedObject) {
@@ -97,11 +96,7 @@ export const DynView = (props: Tprops) => {
 
   // ---------- set Render
   if (!sttTypeFunc)
-    return (
-      <View {...allProps}>
-        <ScrollView>{mapElements(childrenItems, args)}</ScrollView>
-      </View>
-    );
+    return <View {...allProps}>{mapElements(childrenItems, args)}</View>;
 
   if (sttTypeFunc === 'on press') {
     allProps.children = mapElements(childrenItems, args);
@@ -113,9 +108,5 @@ export const DynView = (props: Tprops) => {
   }
 
   if (sttTypeFunc === 'on init')
-    return (
-      <View {...allProps}>
-        <ScrollView>{mapElements(childrenItems, args)}</ScrollView>
-      </View>
-    );
+    return <View {...allProps}>{mapElements(childrenItems, args)}</View>;
 };
