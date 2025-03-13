@@ -287,7 +287,7 @@
           ],
 
           arrStyles: [
-            { color: 'black', fontSize: 12, }
+            { color: "black", fontSize: 16 }
           ],
 
           children: [
