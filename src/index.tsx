@@ -325,7 +325,26 @@
 
             styles:[`{ flex: 1,  padding: 20 }`],
 
-            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.FlatList2 pass={{
+            functions:[()=>{}],            childrenItems:[
+        (...args:any) => <Elements.IptTxtEdit pass={{
+          propsArray: [{}],
+
+          stylesArray: [{
+                color: 'black',
+                fontSize: 14,
+                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
+              }],
+
+          editPath: [`sc3.forms.form1.name`],
+
+          funcsArray: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`sc3.forms.form1.name`],
+          value: `$arg_name`
+        }})],
+
+          args,
+        }}/>, (...args:any) => <Elements.FlatList2 pass={{
           elementProperties: [
             {}
           ],
