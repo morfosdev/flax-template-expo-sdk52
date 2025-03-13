@@ -279,7 +279,7 @@
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ flex: 1 }`],
+            styles:[`{ flex: 1, justifyContent: "center" }`],
 
             functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
