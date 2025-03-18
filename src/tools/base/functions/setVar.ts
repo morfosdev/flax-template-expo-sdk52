@@ -88,6 +88,12 @@ const testArgs = (children, args) => {
 
     console.log('TEXT', { key });
 
+    // ---- Para Callbacks
+    const condInput = key === 'callback';
+    if (condInput) {
+      newArgChildren = args[0];
+    }
+
     const condFull = key === 'full';
     if (condFull) {
       newArgChildren = findFlatItem(args);
