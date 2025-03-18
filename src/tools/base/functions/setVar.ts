@@ -27,11 +27,11 @@ export const setVar = (props: Tprops_setVar) => {
   // -------------------------------
   // ------------- IF is FREE VALUE
   // -------------------------------
-  console.log({ typeValue });
   if (typeValue === 'free') {
     // --------- set Consoles System
     console.log('%csetVar', css1);
     console.log('path:', url);
+    console.log('type:', typeValue);
     console.table('value:', value[0]);
 
     return setData({ path: url, value: value[0] });
@@ -48,6 +48,7 @@ export const setVar = (props: Tprops_setVar) => {
     // --------- set Consoles System
     console.log('%csetVar', css3);
     console.log('%csetVar path', css4, url);
+    console.log('%csetVar type', css4, typeValue);
     console.log('%csetVar value', css4, 'o valor de value é ' + value);
   }
 
@@ -56,6 +57,7 @@ export const setVar = (props: Tprops_setVar) => {
     // --------- set Consoles System
     console.log('%csetVar', css1);
     console.log('path:', url);
+    console.log('type:', typeValue);
     console.table('value:', value);
 
     return setData({ path: url, value: value });
@@ -138,6 +140,5 @@ const getCondValue = (typeValue, value, args) => {
 
   if (updatedValue === undefined) console.log('ARG ERROR', { updatedValue });
 
-  // return { typeValue, updatedValue };
   return updatedValue;
 };
