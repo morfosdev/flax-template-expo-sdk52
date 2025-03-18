@@ -85,6 +85,11 @@ const testArgs = (children, args) => {
 
     console.log('TEXT', { key });
 
+    const condFull = key === 'full';
+    if (condFull) {
+      newArgChildren = args[0];
+    }
+
     const foundItem = findFlatItem(args);
     if (foundItem && foundItem[key]) {
       newArgChildren = foundItem[key];
