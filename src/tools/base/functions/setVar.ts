@@ -19,6 +19,7 @@ export const setVar = (props: Tprops_setVar) => {
   const { args, pass } = props;
   let { keyPath, value } = pass;
   console.log('%csetVar', { keyPath, value, args });
+  console.log({ args });
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
@@ -70,6 +71,7 @@ const testArgs = (children, args) => {
   let newArgChildren = 'undefined';
 
   console.log({ children });
+  console.log({ args });
 
   const joinedChild = children.join();
   if (joinedChild.includes('$var_')) condChildren = 'var';
