@@ -47,7 +47,7 @@ export const setVar = (props: Tprops_setVar) => {
   }
 
   // ------------- IF is FREE VALUE
-  if (condChildren !== 'var' && condChildren !== 'arg') {
+  if (condChildren === '') {
     return setData({ path: url, value: value[0] });
   }
 };
