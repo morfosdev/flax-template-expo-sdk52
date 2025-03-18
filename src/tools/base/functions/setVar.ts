@@ -25,12 +25,7 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
-  // ------------- IF is FREE VALUE
-  if (true) {
-    return setData({ path: url, value: value });
-  }
-
-  const { updatedValue } = testArgsVars(value, args);
+  const { condChildren, updatedValue } = testArgsVars(value, args);
   console.log('SET VAR..', { updatedValue });
   value = updatedValue;
 
@@ -48,7 +43,12 @@ export const setVar = (props: Tprops_setVar) => {
     console.log('path:', url);
     console.table('value:', value);
 
-    setData({ path: url, value: value });
+    return setData({ path: url, value: value });
+  }
+
+  // ------------- IF is FREE VALUE
+  if (condChildren !== 'var' && condChildren !== 'arg') {
+    return setData({ path: url, value: value[0] });
   }
 };
 
