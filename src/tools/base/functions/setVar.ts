@@ -29,6 +29,11 @@ export const setVar = (props: Tprops_setVar) => {
   // -------------------------------
   console.log({ typeValue });
   if (typeValue === 'free') {
+    // --------- set Consoles System
+    console.log('%csetVar', css1);
+    console.log('path:', url);
+    console.table('value:', value[0]);
+
     return setData({ path: url, value: value[0] });
   }
 
