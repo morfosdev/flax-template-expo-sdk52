@@ -21,7 +21,7 @@ export const SvgView1 = (props: Tprops) => {
   const { componentSvg, altura, largura, preenchimento, args } = props.pass;
 
   const [SttComponent, setComponent] = React.useState(<></>);
-  console.log({ preenchimento });
+
   const setNewComp = async () => componentSvg(Svg, SvgObj);
 
   // ---------- set Arguments and Variables (If Exists)
@@ -38,7 +38,5 @@ export const SvgView1 = (props: Tprops) => {
     setNewComp().then(Comp => setComponent(newComp(Comp)));
   }, []);
 
-  // console.log({ iptFill });
   return <>{SttComponent}</>;
 };
-
