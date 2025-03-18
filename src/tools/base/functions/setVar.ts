@@ -22,7 +22,7 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
-  const typeValue = testArgsVars1(value);
+  const typeValue = testArgsVars(value);
 
   // -------------------------------
   // ------------- IF is FREE VALUE
@@ -84,7 +84,7 @@ const findFlatItem = obj => {
   return null;
 };
 
-const testArgsVars1 = (value: string[]) => {
+const testArgsVars = (value: string[]) => {
   let typeValue: 'free' | 'var' | 'arg' = 'free';
 
   const joinedChild = value.join();
