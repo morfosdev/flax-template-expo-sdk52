@@ -463,7 +463,7 @@
  arrFunctions: [async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.newData`],
-          value: [`$var_all.colors.secondary`]
+          value: [[1,2,3]]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
