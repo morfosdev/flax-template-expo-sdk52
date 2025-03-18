@@ -25,7 +25,7 @@ export const setVar = (props: Tprops_setVar) => {
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
   const { newArgChildren } = testArgs(value, args);
-  // testArgs(value, args);
+
   console.log('SET VAR..', { value });
   value = newArgChildren;
 
@@ -42,9 +42,9 @@ export const setVar = (props: Tprops_setVar) => {
     console.log('%csetVar', css1);
     console.log('path:', url);
     console.table('value:', value);
-  }
 
-  setData({ path: url, value: value });
+    setData({ path: url, value: value });
+  }
 };
 
 const findFlatItem = obj => {
@@ -87,16 +87,16 @@ const testArgs = (children, args) => {
 
     const condFull = key === 'full';
     if (condFull) {
-      newArgChildren = args[0];
+      newArgChildren = findFlatItem(args);
     }
 
     const foundItem = findFlatItem(args);
     if (foundItem && foundItem[key]) {
       newArgChildren = foundItem[key];
-      console.log('TEXT', { newArgChildren });
+      console.log('TEXT IF', { newArgChildren });
     }
 
-    // newArgChildren = findFlatItem(args);
+    // newArgChildren = args[0];
     console.log('TEXT', { newArgChildren });
   }
 
