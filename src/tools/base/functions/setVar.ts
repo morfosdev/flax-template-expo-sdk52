@@ -74,6 +74,8 @@ const testArgs = (children, args) => {
   if (joinedChild.includes('$var_')) condChildren = 'var';
   if (joinedChild.includes('$arg_')) condChildren = 'arg';
 
+  console.log({ condChildren });
+
   if (condChildren === 'arg') {
     const key = joinedChild.split('_')[1];
 
