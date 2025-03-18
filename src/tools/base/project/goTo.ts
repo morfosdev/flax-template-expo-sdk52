@@ -17,14 +17,14 @@ export const goTo = (newRoute: string) => {
 
     // --------- set Consoles System
     console.log('%cgoTo', css1);
-    console.log('screen:', css2, varValue);
+    console.log('%cscreen:', css2, varValue);
   }
 
   // ---------- get Function from A_Project Scope
   if (!condVar) {
     // --------- set Consoles System
     console.log('%cgoTo', css1);
-    console.log('screen:', css2, newRoute);
+    console.log('%cscreen:', css2, newRoute);
 
     useRoutes.setState({ currRoute: newRoute });
   }
