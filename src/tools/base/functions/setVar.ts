@@ -22,14 +22,21 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
-  const { condChildren, updatedValue } = testArgsVars(value, args);
-  value = updatedValue;
+  const typeValue = testArgsVars1(value);
 
+  // -------------------------------
   // ------------- IF is FREE VALUE
-  console.log({ condChildren });
-  if (condChildren === '') {
+  // -------------------------------
+  console.log({ typeValue });
+  if (typeValue === 'free') {
     return setData({ path: url, value: value[0] });
   }
+
+  // -----------------------------------
+  // ------------ IF is ARG or VAR VALUE
+  // -----------------------------------
+  value = getCondValue(typeValue, value, args);
+  // value = updatedValue;
 
   // --------- DEPURAR ERRO
   if (value === undefined) {
@@ -70,18 +77,27 @@ const findFlatItem = obj => {
   return null;
 };
 
-const testArgsVars = (children, args) => {
-  let condChildren = '';
+const testArgsVars1 = (value: string[]) => {
+  let typeValue: 'free' | 'var' | 'arg' = 'free';
+
+  const joinedChild = value.join();
+  if (joinedChild.includes('$var_')) typeValue = 'var';
+  if (joinedChild.includes('$arg_')) typeValue = 'arg';
+
+  return typeValue;
+};
+
+const getCondValue = (typeValue, value, args) => {
   let updatedValue = undefined;
 
-  const joinedChild = children.join();
-  if (joinedChild.includes('$var_')) condChildren = 'var';
-  if (joinedChild.includes('$arg_')) condChildren = 'arg';
+  const joinedChild = value.join();
+  if (joinedChild.includes('$var_')) typeValue = 'var';
+  if (joinedChild.includes('$arg_')) typeValue = 'arg';
 
   // --------------------------
   // ------- Tratamento de ARGs
   // --------------------------
-  if (condChildren === 'arg') {
+  if (typeValue === 'arg') {
     const key = joinedChild.split('_')[1];
 
     // ---- Para Callback Functions
@@ -109,7 +125,7 @@ const testArgsVars = (children, args) => {
   // --------------------------
   // ------- Tratamento de VARs
   // --------------------------
-  if (condChildren === 'var') {
+  if (typeValue === 'var') {
     const [condVar, varValue] = getVarValue(joinedChild, 'noComponent');
     if (condVar) updatedValue = varValue;
     if (!condVar) console.log('VAR ERROR', { updatedValue });
@@ -117,5 +133,6 @@ const testArgsVars = (children, args) => {
 
   if (updatedValue === undefined) console.log('ARG ERROR', { updatedValue });
 
-  return { condChildren, updatedValue };
+  // return { typeValue, updatedValue };
+  return updatedValue;
 };
