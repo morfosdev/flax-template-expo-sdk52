@@ -340,7 +340,7 @@
           funcsArray: [async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`sc3.forms.form1.name`],
-          value: `$arg_name`
+          value: [`$arg_name`]
         }})],
 
           args,

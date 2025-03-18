@@ -82,6 +82,7 @@ const testArgs = (children, args) => {
     console.log('TEXT', { key });
 
     const foundItem = findFlatItem(args);
+    console.log('TEXT', { foundItem });
     if (foundItem && foundItem[key]) {
       newArgChildren = foundItem[key];
       console.log('TEXT', { newArgChildren });
