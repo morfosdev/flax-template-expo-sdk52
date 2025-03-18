@@ -2060,13 +2060,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "'example.A1.lists.iptsChanges.name'",
-              "capsIptCapsTypesToAdd": [
-                "free value",
-                "join strings value",
-                "string value",
-                "arg reader",
-                "var reader"
-              ]
+              "capsIptCapsTypesToAdd": ["string process"]
             }
           },
           "ccc_setVar-1": {
@@ -2084,7 +2078,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "'no value'",
-              "capsIptCapsTypesToAdd": ["string process"]
+              "capsIptCapsTypesToAdd": ["string process", "free value"]
             }
           }
         },
