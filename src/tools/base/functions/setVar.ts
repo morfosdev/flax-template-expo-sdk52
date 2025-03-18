@@ -24,6 +24,11 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
+  // ------------- IF is FREE VALUE
+  if (true) {
+    return setData({ path: url, value: value });
+  }
+
   const { updatedValue } = testArgsVars(value, args);
   console.log('SET VAR..', { updatedValue });
   value = updatedValue;
