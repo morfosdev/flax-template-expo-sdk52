@@ -18,7 +18,7 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- set Caps Inputs
   const { args, pass } = props;
   let { keyPath, value } = pass;
-  console.log('%csetVar', { keyPath, value });
+  console.log('%csetVar', { keyPath, value, args });
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
