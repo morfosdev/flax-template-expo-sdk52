@@ -424,7 +424,22 @@
           value: [`$var_all.colors.secondary`]
         }})]
  , trigger: 'on press'
-}})],            childrenItems:[() =><></>],
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `Mudar Cor`
+          ],
+
+          args,
+
+        }}/>],
 
             args,
           }}/>
