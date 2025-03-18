@@ -20,6 +20,7 @@ export const setVar = (props: Tprops_setVar) => {
   let { keyPath, value } = pass;
   console.log('%csetVar', { keyPath, value, args });
   console.log({ args });
+  console.log({ value });
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
