@@ -24,10 +24,9 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
-  const { newArgChildren } = testArgs(value, args);
-
-  console.log('SET VAR..', { value });
-  value = newArgChildren;
+  const { updatedValue } = testArgsVars(value, args);
+  console.log('SET VAR..', { updatedValue });
+  value = updatedValue;
 
   // --------- update Central Data
   if (value === undefined) {
@@ -67,9 +66,9 @@ const findFlatItem = obj => {
   return null;
 };
 
-const testArgs = (children, args) => {
+const testArgsVars = (children, args) => {
   let condChildren = '';
-  let newArgChildren = undefined;
+  let updatedValue = undefined;
 
   console.log({ children });
   console.log({ args });
@@ -88,25 +87,30 @@ const testArgs = (children, args) => {
 
     console.log('TEXT', { key });
 
-    // ---- Para Callbacks
+    // ---- Para Callback Functions
+    // ---- Ex. onChangeText do TextInput
     const condInput = key === 'callback';
     if (condInput) {
-      newArgChildren = args[0];
+      updatedValue = args[0];
     }
 
+    // ---- Para Listas
+    // ---- Passa todo objeto 'item'
     const condFull = key === 'full';
     if (condFull) {
-      newArgChildren = findFlatItem(args);
+      updatedValue = findFlatItem(args);
     }
 
+    // ---- Para Listas
+    // ---- Seleciona um campo dentro de 'item'
     const foundItem = findFlatItem(args);
     if (foundItem && foundItem[key]) {
-      newArgChildren = foundItem[key];
-      console.log('TEXT IF', { newArgChildren });
+      updatedValue = foundItem[key];
+      console.log('TEXT IF', { updatedValue });
     }
 
-    // newArgChildren = args[0];
-    console.log('TEXT', { newArgChildren });
+    // updatedValue = args[0];
+    console.log('TEXT', { updatedValue });
   }
 
   // --------------------------
@@ -114,12 +118,11 @@ const testArgs = (children, args) => {
   // --------------------------
   if (condChildren === 'var') {
     const [condVar, varValue] = getVarValue(joinedChild, 'noComponent');
-    if (condVar) newArgChildren = varValue;
-    if (!condVar) console.log('VAR ERROR', { newArgChildren });
+    if (condVar) updatedValue = varValue;
+    if (!condVar) console.log('VAR ERROR', { updatedValue });
   }
 
-  if (newArgChildren === undefined)
-    console.log('ARG ERROR', { newArgChildren });
+  if (updatedValue === undefined) console.log('ARG ERROR', { updatedValue });
 
-  return { condChildren, newArgChildren };
+  return { condChildren, updatedValue };
 };
