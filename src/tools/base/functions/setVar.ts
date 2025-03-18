@@ -96,7 +96,7 @@ const testArgs = (children, args) => {
       console.log('TEXT', { newArgChildren });
     }
 
-    // newArgChildren = args[0];
+    // newArgChildren = findFlatItem(args);
     console.log('TEXT', { newArgChildren });
   }
 
