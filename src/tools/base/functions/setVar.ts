@@ -1,6 +1,6 @@
 
 // ---------- import Local Tools
-import { setData } from '../project';
+import { setData, getVarValue } from '../project';
 
 export const css1 =
   'color: yellow; background-color: black; font-size: 11px; padding: 2px 6px; border-radius: 3px';
@@ -69,7 +69,7 @@ const findFlatItem = obj => {
 
 const testArgs = (children, args) => {
   let condChildren = '';
-  let newArgChildren = 'undefined';
+  let newArgChildren = undefined;
 
   console.log({ children });
   console.log({ args });
@@ -80,6 +80,9 @@ const testArgs = (children, args) => {
 
   console.log({ condChildren });
 
+  // --------------------------
+  // ------- Tratamento de ARGs
+  // --------------------------
   if (condChildren === 'arg') {
     const key = joinedChild.split('_')[1];
 
@@ -100,7 +103,17 @@ const testArgs = (children, args) => {
     console.log('TEXT', { newArgChildren });
   }
 
-  if (newArgChildren === 'undefined') console.log('ARG NOT FOUND');
+  // --------------------------
+  // ------- Tratamento de VARs
+  // --------------------------
+  if (condChildren === 'var') {
+    const [condVar, varValue] = getVarValue(joinedChild, 'noComponent');
+    if (condVar) newArgChildren = varValue;
+    if (!condVar) console.log('VAR ERROR', { newArgChildren });
+  }
+
+  if (newArgChildren === undefined)
+    console.log('ARG ERROR', { newArgChildren });
 
   return { condChildren, newArgChildren };
 };
