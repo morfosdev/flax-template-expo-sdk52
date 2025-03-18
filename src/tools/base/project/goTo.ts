@@ -24,7 +24,7 @@ export const goTo = (newRoute: string) => {
   if (!condVar) {
     // --------- set Consoles System
     console.log('%cgoTo', css1);
-    console.log('to screen:', newRoute);
+    console.log('%cto screen:', css2, newRoute);
 
     useRoutes.setState({ currRoute: newRoute });
   }
