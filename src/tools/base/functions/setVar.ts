@@ -18,25 +18,28 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- set Caps Inputs
   const { args, pass } = props;
   let { keyPath, value } = pass;
-  console.log('%csetVar', { keyPath, value, args });
-  console.log({ args });
-  console.log({ value });
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
   const { condChildren, updatedValue } = testArgsVars(value, args);
-  console.log('SET VAR..', { updatedValue });
   value = updatedValue;
 
-  // --------- update Central Data
+  // ------------- IF is FREE VALUE
+  console.log({ condChildren });
+  if (condChildren === '') {
+    return setData({ path: url, value: value[0] });
+  }
+
+  // --------- DEPURAR ERRO
   if (value === undefined) {
     // --------- set Consoles System
     console.log('%csetVar', css3);
     console.log('%csetVar path', css4, url);
-    console.table('%csetVar value', css4, 'o valor de value é ' + value);
+    console.log('%csetVar value', css4, 'o valor de value é ' + value);
   }
 
+  // --------- DEPURAR OK
   if (value !== undefined) {
     // --------- set Consoles System
     console.log('%csetVar', css1);
@@ -44,11 +47,6 @@ export const setVar = (props: Tprops_setVar) => {
     console.table('value:', value);
 
     return setData({ path: url, value: value });
-  }
-
-  // ------------- IF is FREE VALUE
-  if (condChildren === '') {
-    return setData({ path: url, value: value[0] });
   }
 };
 
@@ -76,22 +74,15 @@ const testArgsVars = (children, args) => {
   let condChildren = '';
   let updatedValue = undefined;
 
-  console.log({ children });
-  console.log({ args });
-
   const joinedChild = children.join();
   if (joinedChild.includes('$var_')) condChildren = 'var';
   if (joinedChild.includes('$arg_')) condChildren = 'arg';
-
-  console.log({ condChildren });
 
   // --------------------------
   // ------- Tratamento de ARGs
   // --------------------------
   if (condChildren === 'arg') {
     const key = joinedChild.split('_')[1];
-
-    console.log('TEXT', { key });
 
     // ---- Para Callback Functions
     // ---- Ex. onChangeText do TextInput
@@ -112,11 +103,7 @@ const testArgsVars = (children, args) => {
     const foundItem = findFlatItem(args);
     if (foundItem && foundItem[key]) {
       updatedValue = foundItem[key];
-      console.log('TEXT IF', { updatedValue });
     }
-
-    // updatedValue = args[0];
-    console.log('TEXT', { updatedValue });
   }
 
   // --------------------------
