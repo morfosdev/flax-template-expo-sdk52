@@ -2043,7 +2043,7 @@
           "en": ""
         },
         "capsCodeTypes": ["function", "setVar"],
-        "capsCodeText": "async (...args) =>\n        functions.setVar({ args, pass:{\n          keyPath: [!#!url!#!],\n          value: !#!2!#!\n        }})",
+        "capsCodeText": "async (...args) =>\n        functions.setVar({ args, pass:{\n          keyPath: [!#!url!#!],\n          value: [!#!2!#!]\n        }})",
         "capsCodeInputs": {
           "ccc_setVar-0": {
             "capsIptCodeID": "ccc_setVar-0",
@@ -2084,7 +2084,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "'no value'",
-              "capsIptCapsTypesToAdd": ["jsValue", "findBy"]
+              "capsIptCapsTypesToAdd": ["string process"]
             }
           }
         },
