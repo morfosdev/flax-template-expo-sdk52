@@ -24,9 +24,10 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
-  value = testArgs(value, args);
+  const { newArgChildren } = testArgs(value, args);
   // testArgs(value, args);
   console.log('SET VAR..', { value });
+  value = newArgChildren;
 
   // --------- update Central Data
   if (value === undefined) {
