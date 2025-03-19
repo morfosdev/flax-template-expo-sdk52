@@ -26,8 +26,8 @@ export const IptTxtEdit = (props: Tprops) => {
   console.log({ path });
   const joinedPath = path.join();
 
-  console.log({ path });
   const splitedPathArr = joinedPath.split('.');
+  console.log({ splitedPathArr });
 
   const idxToAdd = splitedPathArr.length - 2;
   const editPath = splitedPathArr.splice(idxToAdd, 0, 'editData');
