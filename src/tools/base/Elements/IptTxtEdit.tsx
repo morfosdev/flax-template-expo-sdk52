@@ -18,9 +18,16 @@ type Tprops = {
   };
 };
 
+// IptTxtEdit - Entrada de Texto com prop value
 export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
 
-  return <TextInput  />;
+  console.log({ path });
+  const joinedPath = path.join('');
+  console.log({ joinedPath });
+  const splitedPathArr = joinedPath.split('.');
+  console.log({ splitedPathArr });
+
+  return <TextInput />;
 };
