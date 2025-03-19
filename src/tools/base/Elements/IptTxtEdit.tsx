@@ -35,13 +35,14 @@ export const IptTxtEdit = (props: Tprops) => {
 
   const fxFunction1 = () => {
     if (editData && !sttText) setText(editData);
-
-    return () => {
-      setText('');
-    };
   };
 
   React.useEffect(fxFunction1, [editData]);
+  React.useEffect(() => {
+    return () => {
+      setText('');
+    };
+  }, []);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
