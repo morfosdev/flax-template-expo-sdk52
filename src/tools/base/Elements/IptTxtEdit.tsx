@@ -36,6 +36,7 @@ export const IptTxtEdit = (props: Tprops) => {
     console.log({ editData });
     // if (editData && !sttText) setText(editData);
     if (editData) setText(editData);
+    if (!editData) setText('');
   };
   React.useEffect(fxFunction, [editData]);
 
