@@ -23,33 +23,42 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
 
-  const fxFunction = () => {
-    if (editData) {
-    }
-    if (!editData) splitedPathArr.splice(idxToAdd, 0, 'iptsChanges');
-  };
-
   // --------------------------
   // ----------- set COND VALUE
   // --------------------------
-  console.log({ path });
-  const joinedPath = path.join('');
-  console.log({ joinedPath });
+  const joinedPath = path.join('.'); // Corrigido para usar ponto como delimitador
   const splitedPathArr = joinedPath.split('.');
-  console.log({ splitedPathArr });
   const idxToAdd = splitedPathArr.length - 2;
-  const editPath = splitedPathArr.splice(idxToAdd, 0, 'editData').join('.');
-  const newPath = splitedPathArr.splice(idxToAdd, 0, 'iptsChanges').join('.');
+
+  // Cria cópias separadas para evitar conflitos com splice
+  const splitedPathArrEdit = [...splitedPathArr];
+  splitedPathArrEdit.splice(idxToAdd, 0, 'editData');
+  const editPath = splitedPathArrEdit.join('.');
+
+  const splitedPathArrNew = [...splitedPathArr];
+  splitedPathArrNew.splice(idxToAdd, 0, 'iptsChanges');
+  const newPath = splitedPathArrNew.join('.');
 
   // ------- set Data to Watch
   const [sttText, setText] = React.useState('');
-  const newData = useData(ct => pathSel(ct, splitedPathArr));
-  const editData = useData(ct => pathSel(ct, splitedPathArr));
-  React.useEffect(fxFunction, [editData]);
+
+  // Observar os dados nas paths separadas
+  const editData = useData(ct => pathSel(ct, splitedPathArrEdit));
+  const newData = useData(ct => pathSel(ct, splitedPathArrNew));
+
+  // Efeito colateral ao alterar editData
+  React.useEffect(() => {
+    if (!editData) {
+      // Se editData não existe, poderia processar algo com newPath
+      // Exemplo: console.log('editData vazio, usar newPath:', newPath);
+    }
+  }, [editData]);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
-    for (const currFunc of funcsArray) await currFunc(val, args);
+    for (const currFunc of funcsArray) {
+      await currFunc(val, args);
+    }
   };
 
   // ---------- Styles
@@ -58,29 +67,24 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set User Element Properties (If Exists)
   const userElProps: any = {};
   for (let strObj of propsArray) {
-    if (!strObj) continue;
-    if (!props) continue;
-    if (typeof strObj !== 'string') continue;
+    if (!strObj || typeof strObj !== 'string') continue;
 
     const parsedObject = JSON5.parse(strObj);
 
     for (const keyProp in parsedObject) {
       const valueProp = parsedObject[keyProp];
-
       const [hasVar, varValue] = getVarValue(valueProp);
-
-      if (hasVar) userElProps[keyProp] = varValue;
-      if (!hasVar) userElProps[keyProp] = valueProp;
+      userElProps[keyProp] = hasVar ? varValue : valueProp;
     }
   }
 
+  // Combina todas as props do TextInput
   const allProps = {
     style: stlsUser,
     onChangeText: getTxt,
     value: sttText,
     placeholderTextColor: '#ccc',
     placeholder: 'Escreva...',
-
     ...userElProps,
   };
 
