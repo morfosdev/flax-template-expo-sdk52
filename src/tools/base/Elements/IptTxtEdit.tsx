@@ -23,8 +23,6 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
 
-  const fxFunction = () => {};
-
   // --------------------------
   // ----------- set COND VALUE
   // --------------------------
@@ -32,12 +30,17 @@ export const IptTxtEdit = (props: Tprops) => {
 
   // ------- set Data to Watch
   const [sttText, setText] = React.useState('');
-  const fieldData = useData(ct => pathSel(ct, joinedPath));
-  console.log({ fieldData });
-  React.useEffect(fxFunction, [fieldData]);
+  const editData = useData(ct => pathSel(ct, joinedPath));
+  console.log({ editData });
+
+  const fxFunction = () => {
+    if (editData && !sttText) setText(editData);
+  };
+  React.useEffect(fxFunction, [editData]);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
+    setText(val);
     for (const currFunc of funcsArray) await currFunc(val, args);
   };
 
