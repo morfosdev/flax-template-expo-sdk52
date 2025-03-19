@@ -31,9 +31,9 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set Data to Watch
   const [sttText, setText] = React.useState('');
   const editData = useData(ct => pathSel(ct, joinedPath));
-  console.log({ editData });
 
   const fxFunction = () => {
+    console.log({ editData });
     if (editData && !sttText) setText(editData);
   };
   React.useEffect(fxFunction, [editData]);
