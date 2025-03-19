@@ -32,7 +32,7 @@ export const IptTxtEdit = (props: Tprops) => {
   const [sttText, setText] = React.useState('');
   const editData = useData(ct => pathSel(ct, joinedPath));
 
-  if (editData) setText(editData);
+  if (editData && !sttText) setText(editData);
 
   const fxFunction1 = () => {
     console.log({ editData });
