@@ -44,7 +44,7 @@ export const IptTxtEdit = (props: Tprops) => {
     setText(val);
 
     for (const currFunc of funcsArray) {
-      setData({});
+      // setData({ path: joinedPath, value: val });
       await currFunc(val, args);
     }
   };
