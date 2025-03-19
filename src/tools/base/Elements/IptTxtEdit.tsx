@@ -18,7 +18,6 @@ type Tprops = {
   };
 };
 
-// IptTxtEdit - Entrada de Texto com prop value
 export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
@@ -26,16 +25,16 @@ export const IptTxtEdit = (props: Tprops) => {
   // --------------------------
   // ----------- set COND VALUE
   // --------------------------
-  const joinedPath = path.join('.'); // Corrigido para usar ponto como delimitador
-  const splitedPathArr = joinedPath.split('.');
-  const idxToAdd = splitedPathArr.length - 2;
+  // const joinedPath = path.join('.'); // Corrigido para usar ponto como delimitador
+  // const splitedPathArr = joinedPath.split('.');
+  const idxToAdd = path.length - 2;
 
   // Cria cópias separadas para evitar conflitos com splice
-  const splitedPathArrEdit = [...splitedPathArr];
+  const splitedPathArrEdit = [...path];
   splitedPathArrEdit.splice(idxToAdd, 0, 'editData');
   const editPath = splitedPathArrEdit.join('.');
 
-  const splitedPathArrNew = [...splitedPathArr];
+  const splitedPathArrNew = [...path];
   splitedPathArrNew.splice(idxToAdd, 0, 'iptsChanges');
   const newPath = splitedPathArrNew.join('.');
 
