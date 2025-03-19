@@ -136,11 +136,7 @@
         (...args:any) => <Elements.IptTxtEdit pass={{
           propsArray: [{}],
 
-          stylesArray: [{
-                color: 'black',
-                fontSize: 14,
-                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
-              }],
+          stylesArray: [`{ width: 120, padding: 5, backgroundColor: "#ccc" }`],
 
           path: [`sc3.forms.form1.name`],
 
