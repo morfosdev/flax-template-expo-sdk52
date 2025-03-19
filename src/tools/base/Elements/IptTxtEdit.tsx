@@ -31,20 +31,13 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set Data to Watch
   const [sttText, setText] = React.useState('');
   const editData = useData(ct => pathSel(ct, joinedPath));
-
-  if (editData && !sttText) setText(editData);
+  console.log({ editData });
 
   const fxFunction1 = () => {
-    console.log({ editData });
-    // if (editData && !sttText) setText(editData);
-    // if (!editData) setText('');
+    if (editData && !sttText) setText(editData);
   };
-  // const fxFunction2 = () => {
-  //   console.log({ editData });
-  //   if (sttText) setText('');
-  // };
+
   React.useEffect(fxFunction1, [editData]);
-  // React.useEffect(fxFunction2, []);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
