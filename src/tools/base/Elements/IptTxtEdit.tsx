@@ -34,22 +34,17 @@ export const IptTxtEdit = (props: Tprops) => {
   console.log({ editData });
 
   const fxFunction1 = () => {
-    // if (editData && !sttText) setText(editData);
     if (editData) setText(editData);
   };
 
   React.useEffect(fxFunction1, [editData]);
-  // React.useEffect(() => {
-  //   return () => {
-  //     setText('');
-  //   };
-  // }, []);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
     setText(val);
 
     for (const currFunc of funcsArray) {
+      console.log({ currFunc });
       setData({ path: joinedPath, value: val });
       await currFunc(val, args);
     }
