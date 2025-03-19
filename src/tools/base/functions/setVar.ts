@@ -19,6 +19,9 @@ export const setVar = (props: Tprops_setVar) => {
   const { args, pass } = props;
   let { keyPath, value } = pass;
 
+  const test1 = typeof value;
+  console.log({ test1 });
+
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
 
