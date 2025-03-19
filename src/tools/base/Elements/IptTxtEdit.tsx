@@ -39,11 +39,11 @@ export const IptTxtEdit = (props: Tprops) => {
   };
 
   React.useEffect(fxFunction1, [editData]);
-  React.useEffect(() => {
-    return () => {
-      setText('');
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   return () => {
+  //     setText('');
+  //   };
+  // }, []);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
