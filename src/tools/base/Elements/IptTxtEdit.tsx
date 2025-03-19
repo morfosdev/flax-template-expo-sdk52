@@ -5,7 +5,7 @@ import JSON5 from 'json5';
 import { TextInput } from 'react-native';
 
 // ---------- import Local Tools
-import { getVarValue, getStlValues, pathSel } from '../project';
+import { getVarValue, getStlValues, pathSel, setData } from '../project';
 import { useData } from '../../..';
 
 type Tprops = {
@@ -34,14 +34,19 @@ export const IptTxtEdit = (props: Tprops) => {
 
   const fxFunction = () => {
     console.log({ editData });
-    if (editData && !sttText) setText(editData);
+    // if (editData && !sttText) setText(editData);
+    if (editData) setText(editData);
   };
   React.useEffect(fxFunction, [editData]);
 
   // ---------- Functions
   const getTxt = async (val: string) => {
     setText(val);
-    for (const currFunc of funcsArray) await currFunc(val, args);
+
+    for (const currFunc of funcsArray) {
+      setData({});
+      await currFunc(val, args);
+    }
   };
 
   // ---------- Styles
