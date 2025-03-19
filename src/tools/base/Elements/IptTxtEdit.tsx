@@ -38,7 +38,6 @@ export const IptTxtEdit = (props: Tprops) => {
 
     return () => {
       setText('');
-      setData({ path: joinedPath, value: '' });
     };
   };
 
