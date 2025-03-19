@@ -867,7 +867,7 @@
           "en": ""
         },
         "capsCodeTypes": ["Elemento de Tela", "TextInput Edit"],
-        "capsCodeText": "(...args:any) => <Elements.IptTxtEdit pass={{\n          propsArray: [!#!Properties!#!],\n\n          stylesArray: [!#!Styles!#!],\n\n          editPath: [!#!Edit Path!#!],\n\n          funcsArray: [!#!Functions!#!],\n\n          args,\n        }}/>",
+        "capsCodeText": "(...args:any) => <Elements.IptTxtEdit pass={{\n          propsArray: [!#!Properties!#!],\n\n          stylesArray: [!#!Styles!#!],\n\n          path: [!#!Edit Path!#!],\n\n          funcsArray: [!#!Functions!#!],\n\n          args,\n        }}/>",
         "capsCodeInputs": {
           "ccc_textInputEdit_C-0": {
             "capsIptCodeID": "ccc_textInputEdit_C-0",
@@ -912,8 +912,8 @@
             "capsIptType": "capsules",
             "capsIptCapsInfo": {
               "capsIptCapsLabel": {
-                "pt-br": "Edit Path",
-                "en": "Edit Path"
+                "pt-br": "Path",
+                "en": "Path"
               },
               "capsIptCapsDescription": {
                 "pt-br": "",
