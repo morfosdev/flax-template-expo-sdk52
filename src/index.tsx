@@ -337,11 +337,7 @@
 
           editPath: [`sc3.forms.form1.name`],
 
-          funcsArray: [async (...args) =>
-        functions.setVar({ args, pass:{
-          keyPath: [`sc3.forms.form1.name`],
-          value: [`$arg_callback`]
-        }})],
+          funcsArray: [() => {}],
 
           args,
         }}/>, 
