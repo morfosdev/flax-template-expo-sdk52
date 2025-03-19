@@ -1,4 +1,5 @@
 
+
 // ---------- import Local Tools
 import { setData, getVarValue } from '../project';
 
@@ -18,9 +19,6 @@ export const setVar = (props: Tprops_setVar) => {
   // ---------- set Caps Inputs
   const { args, pass } = props;
   let { keyPath, value } = pass;
-
-  const test1 = typeof value;
-  console.log({ test1 });
 
   // ---------- join String
   const url = keyPath.reduce((prev, curr) => prev + curr, '');
