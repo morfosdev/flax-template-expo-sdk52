@@ -22,6 +22,7 @@ type Tprops = {
 export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
+  console.log({ props });
 
   const fxFunction = () => {
     if (editData) {
@@ -83,3 +84,4 @@ export const IptTxtEdit = (props: Tprops) => {
 
   return <TextInput {...allProps} />;
 };
+
