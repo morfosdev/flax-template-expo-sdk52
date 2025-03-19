@@ -159,7 +159,7 @@
 
           stylesArray: [`{ backgroundColor: "lightblue", padding: 10 }`],
 
-          editPath: [" "],
+          path: [" "],
 
           funcsArray: [() => {}],
 
@@ -335,7 +335,7 @@
                 // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
               }],
 
-          editPath: [`sc3.forms.form1.name`],
+          path: [`sc3.forms.form1.name`],
 
           funcsArray: [() => {}],
 

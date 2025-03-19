@@ -32,7 +32,7 @@ export const IptTxtEdit = (props: Tprops) => {
   // --------------------------
   // ----------- set COND VALUE
   // --------------------------
-  const joinedPath = editPath.join();
+  const joinedPath = path.join();
   const splitedPathArr = joinedPath.split('.');
   const idxToAdd = splitedPathArr.length - 2;
   const editPath = splitedPathArr.splice(idxToAdd, 0, 'editData').join('.');
