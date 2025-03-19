@@ -134,7 +134,7 @@
 
             functions:[()=>{}],            childrenItems:[
         (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [`{ placeholderTextColor: "#333", placeholder: "Digite Aqui" }`],
+          propsArray: [`{ placeholderTextColor: "#333", placeholder: "Nome da Tarefa" }`],
 
           stylesArray: [`{ width: 120, padding: 5, backgroundColor: "#ccc" }`],
 
