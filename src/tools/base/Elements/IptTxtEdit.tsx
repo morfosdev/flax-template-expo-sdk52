@@ -36,5 +36,42 @@ export const IptTxtEdit = (props: Tprops) => {
   console.log({ fieldData });
   React.useEffect(fxFunction, [fieldData]);
 
-  return <TextInput />;
+  // ---------- Functions
+  const getTxt = async (val: string) => {
+    for (const currFunc of funcsArray) await currFunc(val, args);
+  };
+
+  // ---------- Styles
+  const stlsUser = getStlValues(stylesArray);
+
+  // ------- set User Element Properties (If Exists)
+  const userElProps: any = {};
+  for (let strObj of propsArray) {
+    if (!strObj) continue;
+    if (!props) continue;
+    if (typeof strObj !== 'string') continue;
+
+    const parsedObject = JSON5.parse(strObj);
+
+    for (const keyProp in parsedObject) {
+      const valueProp = parsedObject[keyProp];
+
+      const [hasVar, varValue] = getVarValue(valueProp);
+
+      if (hasVar) userElProps[keyProp] = varValue;
+      if (!hasVar) userElProps[keyProp] = valueProp;
+    }
+  }
+
+  const allProps = {
+    style: stlsUser,
+    onChangeText: getTxt,
+    value: sttText,
+    placeholderTextColor: '#ccc',
+    placeholder: 'Escreva...',
+
+    ...userElProps,
+  };
+
+  return <TextInput {...allProps} />;
 };
