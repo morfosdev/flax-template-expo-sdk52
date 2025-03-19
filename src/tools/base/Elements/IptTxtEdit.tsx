@@ -35,6 +35,11 @@ export const IptTxtEdit = (props: Tprops) => {
 
   const fxFunction1 = () => {
     if (editData && !sttText) setText(editData);
+
+    return () => {
+      setText('');
+      setData({ path: joinedPath, value: '' });
+    };
   };
 
   React.useEffect(fxFunction1, [editData]);
