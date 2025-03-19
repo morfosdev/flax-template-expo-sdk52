@@ -23,18 +23,18 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
 
-  console.log({ path });
+  const fxFunction = () => {};
+
+  // --------------------------
+  // ----------- set COND VALUE
+  // --------------------------
   const joinedPath = path.join();
 
-  const splitedPathArr = joinedPath.split('.');
-  console.log({ splitedPathArr });
-
-  const idxToAdd = splitedPathArr.length - 2;
-  const editPath = splitedPathArr.splice(idxToAdd, 0, 'editData');
-  const newPath = splitedPathArr.splice(idxToAdd, 0, 'iptsChanges');
-
-  console.log({ editPath });
-  console.log({ newPath });
+  // ------- set Data to Watch
+  const [sttText, setText] = React.useState('');
+  const fieldData = useData(ct => pathSel(ct, joinedPath));
+  console.log({ fieldData });
+  React.useEffect(fxFunction, [fieldData]);
 
   return <TextInput />;
 };
