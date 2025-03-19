@@ -34,7 +34,8 @@ export const IptTxtEdit = (props: Tprops) => {
   console.log({ editData });
 
   const fxFunction1 = () => {
-    if (editData && !sttText) setText(editData);
+    // if (editData && !sttText) setText(editData);
+    if (editData) setText(editData);
   };
 
   React.useEffect(fxFunction1, [editData]);
