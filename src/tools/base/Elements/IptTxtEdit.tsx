@@ -13,7 +13,7 @@ type Tprops = {
     propsArray: any;
     stylesArray: any;
     funcsArray: any;
-    path: string[];
+    path: any;
     args: any;
   };
 };
@@ -25,9 +25,10 @@ export const IptTxtEdit = (props: Tprops) => {
 
   console.log({ path });
   const joinedPath = path.join();
-  const splitedPathArr = joinedPath.split('.');
+  console.log({ path });
+  // const splitedPathArr = joinedPath.split('.');
 
-  const idxToAdd = splitedPathArr.length - 2;
+  // const idxToAdd = splitedPathArr.length - 2;
   // const editPath = splitedPathArr.splice(idxToAdd, 0, 'editData');
   // const newPath = splitedPathArr.splice(idxToAdd, 0, 'iptsChanges');
 
