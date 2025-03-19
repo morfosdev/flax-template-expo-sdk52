@@ -266,8 +266,8 @@
  functions.funcGroup({ args, pass:{
  arrFunctions: [async (...args) =>
         functions.setVar({ args, pass:{
-          keyPath: [`all.newData`],
-          value: [[1,2,3]]
+          keyPath: [`sc3.forms.form1.name`],
+          value: [João]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
