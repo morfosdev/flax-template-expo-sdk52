@@ -23,10 +23,10 @@ export const IptTxtEdit = (props: Tprops) => {
   // ------- set IptTxt Inputs
   const { propsArray, stylesArray, funcsArray, path, args } = props.pass;
 
-  console.log({ path });
-  const joinedPath = path.join();
+  // console.log({ path });
+  // const joinedPath = path.join();
 
-  console.log({ joinedPath });
+  // console.log({ joinedPath });
   // const splitedPathArr = joinedPath.split('.');
 
   // const idxToAdd = splitedPathArr.length - 2;
