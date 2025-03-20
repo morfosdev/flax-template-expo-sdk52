@@ -1,4 +1,5 @@
 
+import JSON5 from 'json5';
 // ---------- import Local Tools
 import { getVarValue } from '../project';
 
@@ -28,17 +29,14 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   //   if (hasVar) userElProps[keyProp] = varValue;
   //   if (!hasVar) userElProps[keyProp] = valueProp;
 
+  const strArr = JSON.stringify(oldArr);
+  const parsedArr = JSON5.parse(strArr);
+
   console.log('oldArr:', oldArr);
   console.log('newValue:', newValue);
-  console.log('oldArr + newValue:', [...oldArr, newValue]);
+  console.log('oldArr + newValue:', [...parsedArr, newValue]);
 
-  const isAlreadyPresent = oldArr.some(item => item.name === newValue.name);
-
-  let newArr: any[] = [];
-  if (!isAlreadyPresent) {
-    newArr = [...oldArr, newValue];
-  }
-
+  const newArr: any[] = [...oldArr, newValue];
   console.log({ newArr });
   //   newArr.push(...oldArr);
   //   newArr.push(newValue);
