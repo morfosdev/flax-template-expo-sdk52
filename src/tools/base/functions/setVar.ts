@@ -129,6 +129,8 @@ const getCondValue = (typeValue, value, args) => {
     if (foundItem && foundItem[key]) {
       updatedValue = foundItem[key];
     }
+
+    if (updatedValue === undefined) console.log('ARG ERROR', { updatedValue });
   }
 
   // --------------------------
@@ -139,8 +141,6 @@ const getCondValue = (typeValue, value, args) => {
     if (condVar) updatedValue = varValue;
     if (!condVar) console.log('VAR ERROR', { updatedValue });
   }
-
-  if (updatedValue === undefined) console.log('ARG ERROR', { updatedValue });
 
   return updatedValue;
 };
