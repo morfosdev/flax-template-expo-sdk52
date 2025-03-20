@@ -32,7 +32,13 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   console.log('newValue:', newValue);
   console.log('oldArr + newValue:', [...oldArr, newValue]);
 
-  const newArr: any[] = [...oldArr, newValue];
+  const isAlreadyPresent = oldArr.some(item => item.name === newValue.name);
+
+  let newArr: any[] = [];
+  if (!isAlreadyPresent) {
+    newArr = [...oldArr, newValue];
+  }
+
   console.log({ newArr });
   //   newArr.push(...oldArr);
   //   newArr.push(newValue);
