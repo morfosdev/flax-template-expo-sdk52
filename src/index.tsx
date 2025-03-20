@@ -28,199 +28,6 @@
         
 
         (...args: any) => <Elements.Screen3 pass={{
-          pathScreen:"sc1",
-
-          styles:[`{ backgroundColor: "red", alignItems: "center", justifyContent: "center", flex: 1 }`],
-
-          screenElements:[
-        
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:[`{ disabled: "$var_all.cond1", onHoverIn: "$var_all.func1", children: "$var_all.Comp1" }`],
-
-            styles:[`{ backgroundColor: "$var_all.colors.primary", width: 120, height: 40, marginTop: 60, alignItems: "center", justifyContent: "center" }`],
-
-            functions:[async (...args) =>
- functions.funcGroup({ args, pass:{
- arrFunctions: [
-        (...args) => {
-          // ---------- get Function from A_Project Scope
-          return tools.goTo("sc2");
-        }
-        ]
- , trigger: 'on press'
-}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            { color: 'black', fontSize: 12, }
-          ],
-
-          children: [
-            `Ir p/ Tela 2`
-          ],
-
-          args,
-
-        }}/>],
-
-            args,
-          }}/>
-        , 
-        (...args:any) => <Elements.FlatList2 pass={{
-          elementProperties: [
-            {}
-          ],
-
-          pData: `all.lists.lt1`,
-
-          itemElements: [
-            
-        (...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            { color: "red", fontSize: 24 }
-          ],
-
-          children: [
-            `$arg_name`
-          ],
-
-          args,
-
-        }}/>, 
-        
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
-
-            styles:[
-              {
-                backgroundColor: 'white',
-                justifyContent: 'center',
-                minHeight: 22,
-                width: "100%",
-              }
-              ],
-
-            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            { color: 'black', fontSize: 12, }
-          ],
-
-          children: [
-            `$arg_name`
-          ],
-
-          args,
-
-        }}/>],
-
-            args,
-          }}/>
-        , 
-
-    (...args:any) => <Elements.ImageBox pass={{
-      elementsProperties:[{}],
-
-      styles:[
-              {
-                height: "50px",
-                width: "80px",
-                backgroundColor: "#FDFDFD",
-                borderWidth: 2,
-                borderColor: "#EEE"
-              }
-              ],
-
-      URIvariablePath:[`$arg_img`],
-
-      args,
-    }}/>
-          ],
-
-      styles:[`{ flex: 1, backgroundColor: "yellow", width: "100%", height: 60 }`],    args,
-        }}/>, 
-        (...args:any) => <Elements.Loader pass={{
-            size: "small",
-            color: `black`,
-            args,
-        }}/>, (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [{}],
-
-          stylesArray: [`{ backgroundColor: "lightblue", padding: 10 }`],
-
-          path: [" "],
-
-          funcsArray: [() => {}],
-
-          args,
-        }}/>],
-
-          functions:[()=>{}],
-
-          args,
-        }}/>, 
-        
-
-        (...args: any) => <Elements.Screen3 pass={{
-          pathScreen:"sc2",
-
-          styles:[
-              {
-                backgroundColor: '#101',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
-                width: '100%',
-              }
-              ],
-
-          screenElements:[
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
-
-            styles:[
-              {
-                backgroundColor: 'white',
-                justifyContent: 'center',
-                minHeight: 22,
-                width: "100%",
-              }
-              ],
-
-            functions:[async (...args) =>
- functions.funcGroup({ args, pass:{
- arrFunctions: [async (...args) =>
-        functions.firebase.setDocTool({ args, pass:{
-  arrRefStrings: [`tests`],
-            arrPathData: [`all.dataToSet`],
-            arrFuncs: [argDoc => console.log({argDoc})],
-        }})]
- , trigger: 'on press'
-}})],            childrenItems:[() =><></>],
-
-            args,
-          }}/>
-        ],
-
-          functions:[()=>{}],
-
-          args,
-        }}/>, 
-        
-
-        (...args: any) => <Elements.Screen3 pass={{
           pathScreen:"sc3",
 
           styles:[`{ backgroundColor: "white", flex: 1 }`],
@@ -327,24 +134,142 @@
 
             functions:[()=>{}],            childrenItems:[
         (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [{}],
+          propsArray: [`{ placeholderTextColor: "#333", placeholder: "Nome da Tarefa" }`],
 
-          stylesArray: [{
-                color: 'black',
-                fontSize: 14,
-                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
-              }],
+          stylesArray: [`{ width: 120, padding: 5, backgroundColor: "#ccc" }`],
 
           path: [`sc3.forms.form1.name`],
 
-          funcsArray: [async (...args) =>
-        functions.setVar({ args, pass:{
-          keyPath: [`sc3.forms.form1.name`],
-          value: [`$arg_callback`]
-        }})],
+          funcsArray: [() => {}],
 
           args,
         }}/>, 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.lists.lst2`],
+          value: [[{name: "Task1"}, {name: "Task2"}, {name: "Task3"}]]
+        }})]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `Add`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        , 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.lists.lst2`],
+          value: [`$var_all.lists.lst3`]
+        }})]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `Add`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        , 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.lists.lst2`],
+          value: [undefined]
+        }})]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `Add`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        , 
         (...args:any) => <Elements.FlatList2 pass={{
           elementProperties: [
             {}
@@ -445,6 +370,7 @@
             args,
           }}/>
         , 
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -462,8 +388,8 @@
  functions.funcGroup({ args, pass:{
  arrFunctions: [async (...args) =>
         functions.setVar({ args, pass:{
-          keyPath: [`all.newData`],
-          value: [[1,2,3]]
+          keyPath: [`sc3.forms.form1.name`],
+          value: ["João"]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
@@ -476,7 +402,49 @@
           ],
 
           children: [
-            `Mudar Outra Coisa`
+            `Free Value`
+          ],
+
+          args,
+
+        }}/>],
+
+            args,
+          }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [
+        (...args) => {
+          // ---------- get Function from A_Project Scope
+          return tools.goTo("sc4");
+        }
+        ]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `GoTo`
           ],
 
           args,
@@ -502,6 +470,7 @@
           styles:[`{ backgroundColor: "white", flex: 1 }`],
 
           screenElements:[
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -516,7 +485,16 @@
 
             styles:[`{ width: 40, height: 40, alignItems: "center", justifyContent: "center" }`],
 
-            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [
+        (...args) => {
+          // ---------- get Function from A_Project Scope
+          return tools.goTo("sc3");
+        }
+        ]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.SvgView1 pass={{
       componentSvg: (Svg:any, SvgObj:any) => {
         const { Defs, Stop, Path, LinearGradient, G, Circle, Rect, Mask } = SvgObj;
         return (props:any) => (<Svg
@@ -592,6 +570,31 @@
 
             args,
           }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ flex: 1,  padding: 20 }`],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.IptTxtEdit pass={{
+          propsArray: [{}],
+
+          stylesArray: [{
+                color: 'black',
+                fontSize: 14,
+                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
+              }],
+
+          path: [`sc3.forms.form1.name`],
+
+          funcsArray: [() => {}],
+
+          args,
+        }}/>],
+
+            args,
+          }}/>
         ],
 
           functions:[()=>{}],
@@ -610,7 +613,8 @@
 'func1': (nativeEvent)=>console.log(nativeEvent), 
 'Comp1': <RN.Text style={{color: "darkred"}}>---</RN.Text>, 
 'lists': { 
-'lt1': [{name: "João", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{name: "Luciana"},{name: "Pedro"}], 'lst2': [{name: "Task 1"},{name: "Task2"}] } 
+'lt1': [{name: "João", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},{name: "Luciana"},{name: "Pedro"}], 
+'lst2': [{name: "Task 1"},{name: "Task2"}], 'lst3': [{name: "Task 1"},{name: "Task 2"}] } 
 , 
 'name': "Name:", 'dataToSet': {name: "Carlos", phone: "1111"} } 
  
@@ -620,18 +624,7 @@
           // console.log(initObj);
 
           const arrInitFuncs = [
-            async (...args) =>
-  functions.firebase.fireInit({ args, pass:{
-   fbConfig: `{
-  apiKey: "AIzaSyB9ntwrJDypFXm87NofdXn_oZpGlLzmeYw",
-  authDomain: "cong-maps2.firebaseapp.com",
-  projectId: "cong-maps2",
-  storageBucket: "cong-maps2.appspot.com",
-  messagingSenderId: "646415050546",
-  appId: "1:646415050546:web:ed4fc689f629a9b397592b"
-}`,
-
-        }})
+            ()=>{}
           ];
 
           export const useRoutes = create(() => ({ currRoute }));

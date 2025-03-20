@@ -36,7 +36,6 @@ export const processFunctions = async (arr: any[]) => {
 // DynView / BOX
 export const DynView = (props: Tprops) => {
   if (!props) return <></>;
-  console.log('BOX', { props });
 
   const [sttTypeFunc, setTypeFunc] = useState('');
   const [sttPressFuncs, setPressFuncs] = useState<
@@ -72,7 +71,6 @@ export const DynView = (props: Tprops) => {
     if (!props) continue;
     if (typeof strObj !== 'string') continue;
 
-    console.log('BOX', { strObj });
     const parsedObject = JSON5.parse(strObj);
 
     for (const keyProp in parsedObject) {
@@ -85,14 +83,10 @@ export const DynView = (props: Tprops) => {
     }
   }
 
-  console.log('BOX', { userElProps });
-
   const allProps = {
     style: stl,
     ...userElProps,
   };
-
-  console.log('BOX', { allProps });
 
   // ---------- set Render
   if (!sttTypeFunc)

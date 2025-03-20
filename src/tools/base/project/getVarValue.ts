@@ -19,7 +19,7 @@ export const getVarValue = (
   const varPath = path.replace('$var_', '');
   if (setGet === 'noComponent') {
     const varValue = getCtData(varPath);
-    console.log('dentro getCtData', { varValue });
+
     return [true, varValue];
   }
 
