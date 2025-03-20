@@ -14,9 +14,15 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   const { args, pass } = props;
   let { arrPath, valuePath } = pass;
 
-  const [hasOldArr, oldArr] = getVarValue(arrPath) as [boolean, any[]];
+  const [hasOldArr, oldArr] = getVarValue(arrPath, 'noComponent') as [
+    boolean,
+    any[],
+  ];
   console.log({ oldArr });
-  const [hasNewValue, newValue] = getVarValue(valuePath) as [boolean, any[]];
+  const [hasNewValue, newValue] = getVarValue(valuePath, 'noComponent') as [
+    boolean,
+    any[],
+  ];
   console.log({ newValue });
 
   //   if (hasVar) userElProps[keyProp] = varValue;
