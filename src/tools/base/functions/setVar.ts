@@ -135,6 +135,7 @@ const getCondValue = (typeValue, value, args) => {
   // ------- Tratamento de VARs
   // --------------------------
   if (typeValue === 'var') {
+    console.log({ joinedChild });
     const [condVar, varValue] = getVarValue(joinedChild, 'noComponent');
     if (condVar) updatedValue = varValue;
     if (!condVar) console.log('VAR ERROR', { updatedValue });
