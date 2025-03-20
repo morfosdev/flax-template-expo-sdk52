@@ -6,7 +6,7 @@ type Tprops_arrayPush = {
   args: any;
   pass: { arrPath: string; valuePath: string[] };
 };
-export const arrayPush = async (props: Tprops_arrayPush) => {
+export const arrayPush = (props: Tprops_arrayPush) => {
   console.log('START ARRAY PUSH --------------');
   console.log({ props });
 
