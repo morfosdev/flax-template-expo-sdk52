@@ -37,6 +37,8 @@ export const setVar = (props: Tprops_setVar) => {
     return setData({ path: url, value: value[0] });
   }
 
+  console.log('PASSOU POR AQUI');
+
   // -----------------------------------
   // ------------ IF is ARG or VAR VALUE
   // -----------------------------------
