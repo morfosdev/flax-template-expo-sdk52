@@ -14,7 +14,7 @@ export const getStlValues = (arrGetValues: string[]) => {
     }
 
     const trimmedString = value.trim();
-
+    console.log({ trimmedString });
     const parsedObject = JSON5.parse(trimmedString);
 
     return parsedObject;

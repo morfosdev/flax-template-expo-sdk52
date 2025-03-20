@@ -24,10 +24,12 @@ export const FlatList2 = (props: Tprops) => {
   const { elementProperties, pData, itemElements, styles, args } = props.pass;
 
   // ---------- set Data Listener
+  console.log({ itemElements });
+  console.log({ elementProperties });
 
   let watchData = '';
   if (typeof pData === 'string') watchData = useData(ct => pathSel(ct, pData));
-
+  // console.log({ watchData });
   // ---------- set List Item
   const renderItem = ({ item, index }: any) => (
     <>{mapElements(itemElements, { item, index })}</>
@@ -40,6 +42,7 @@ export const FlatList2 = (props: Tprops) => {
     if (!props) continue;
     if (typeof strObj !== 'string') continue;
 
+    console.log('BOX', { strObj });
     const parsedObject = JSON5.parse(strObj);
 
     for (const keyProp in parsedObject) {
@@ -62,6 +65,10 @@ export const FlatList2 = (props: Tprops) => {
 
     ...userElProps,
   };
+
+  // console.log({ elementProperties, allProps });
+
+  console.log({ allProps });
 
   // ------- set Render
   return <FlatList {...allProps} />;

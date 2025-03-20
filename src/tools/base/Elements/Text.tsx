@@ -17,16 +17,19 @@ export const Text = (props: Tprops) => {
   const { arrProps, arrStyles, args } = props.pass;
   let { children } = props.pass;
 
+  console.log('TEXT ARGS', { args });
+  console.log('TEXT ARGS', { children });
+
   const { condChildren, newArgChildren } = testArgs(children, args);
 
   let watchChildren = '';
-
+  console.log({ watchChildren });
   if (condChildren === 'arg') children = newArgChildren;
   if (condChildren === 'var') {
     const joinedChld = children.join().replace('$var_', '');
-
+    console.log({ joinedChld });
     watchChildren = useData(ct => pathSel(ct, joinedChld));
-
+    console.log({ watchChildren });
     children = watchChildren;
   }
 
@@ -39,6 +42,7 @@ export const Text = (props: Tprops) => {
     if (!props) continue;
     if (typeof strObj !== 'string') continue;
 
+    console.log('TEXT', { strObj });
     const parsedObject = JSON5.parse(strObj);
 
     for (const keyProp in parsedObject) {
@@ -93,9 +97,12 @@ const testArgs = (children, args) => {
   if (condChildren === 'arg') {
     const key = joinedChild.split('_')[1];
 
+    console.log('TEXT', { key });
+
     const foundItem = findFlatItem(args);
     if (foundItem && foundItem[key]) {
       newArgChildren = foundItem[key];
+      console.log('TEXT', { newArgChildren });
     }
   }
 
