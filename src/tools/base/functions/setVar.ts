@@ -96,6 +96,7 @@ const testArgsVars = (value: string[]) => {
 
 const getCondValue = (typeValue, value, args) => {
   let updatedValue = undefined;
+  console.log({ value });
 
   const joinedChild = value.join();
   if (joinedChild.includes('$var_')) typeValue = 'var';
