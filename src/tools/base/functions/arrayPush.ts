@@ -28,6 +28,10 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   //   if (hasVar) userElProps[keyProp] = varValue;
   //   if (!hasVar) userElProps[keyProp] = valueProp;
 
+  console.log('oldArr:', oldArr);
+  console.log('newValue:', newValue);
+  console.log('oldArr + newValue:', [...oldArr, newValue]);
+
   const newArr: any[] = [...oldArr, newValue];
   console.log({ newArr });
   //   newArr.push(...oldArr);
