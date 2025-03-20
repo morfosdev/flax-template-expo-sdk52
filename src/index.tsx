@@ -166,7 +166,7 @@
           value: [((...args) =>
  functions.arrayPush({ args, pass:{
  arrPath: "$var_all.lists.lst3",
- valuePath: "$var_sc3.forms.form1.name",
+ valuePath: "$var_sc3.forms.form1",
 
  }}))()]
         }})]
