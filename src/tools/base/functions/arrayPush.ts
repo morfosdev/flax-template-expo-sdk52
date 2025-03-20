@@ -41,16 +41,8 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   newArr.push(...parsedArr);
   newArr.push(newValue);
 
-  const exists = oldArr.some(
-    item => JSON.stringify(item) === JSON.stringify(newValue),
-  );
-  if (!exists) {
-    const newArr = [...oldArr, newValue];
-    return newArr;
-  }
-
   //   console.log({ newValue });
   console.log('FINISH ARRAY PUSH --------------');
   // ---------- set New Data
-  //   return newArr;
+  return newArr;
 };
