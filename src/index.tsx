@@ -163,7 +163,12 @@
  arrFunctions: [async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.lists.lst2`],
-          value: ["$var_all.lists.lst3"]
+          value: [() => { 
+
+"$var_all.lists.lst3".push("teste1") 
+
+return
+}]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
