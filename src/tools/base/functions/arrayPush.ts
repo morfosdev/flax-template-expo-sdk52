@@ -6,6 +6,9 @@ type Tprops_arrayPush = {
   args: any;
   pass: { arrPath: string; valuePath: string[] };
 };
+
+type Tvalue = [boolean, any[]];
+
 export const arrayPush = (props: Tprops_arrayPush) => {
   console.log('START ARRAY PUSH --------------');
   console.log({ props });
@@ -14,24 +17,21 @@ export const arrayPush = (props: Tprops_arrayPush) => {
   const { args, pass } = props;
   let { arrPath, valuePath } = pass;
 
-  const [hasOldArr, oldArr] = getVarValue(arrPath, 'noComponent') as [
-    boolean,
-    any[],
-  ];
+  const [hasOldArr, oldArr] = getVarValue(arrPath, 'noComponent') as Tvalue;
   console.log({ oldArr });
-  const [hasNewValue, newValue] = getVarValue(valuePath, 'noComponent') as [
-    boolean,
-    any[],
-  ];
+  const [hasNewValue, newValue] = getVarValue(
+    valuePath,
+    'noComponent',
+  ) as Tvalue;
   console.log({ newValue });
 
   //   if (hasVar) userElProps[keyProp] = varValue;
   //   if (!hasVar) userElProps[keyProp] = valueProp;
 
-  const newArr: any[] = [];
+  const newArr: any[] = [...oldArr, newValue];
   console.log({ newArr });
-  newArr.push(...oldArr);
-  newArr.push(newValue);
+  //   newArr.push(...oldArr);
+  //   newArr.push(newValue);
 
   console.log({ newValue });
   console.log('FINISH ARRAY PUSH --------------');
