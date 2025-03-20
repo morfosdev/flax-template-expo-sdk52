@@ -165,7 +165,7 @@
           keyPath: [`all.lists.lst2`],
           value: [((...args) =>
  functions.arrayPush({ args, pass:{
- arrPath: "$var_all.lists.lst3",
+ arrPath: "$var_all.lists.lst2",
  valuePath: "$var_sc3.forms.form1",
 
  }}))()]
