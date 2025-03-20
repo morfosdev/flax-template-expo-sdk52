@@ -1,48 +1,34 @@
 
 // ---------- import Local Tools
-import { tools } from '../..';
+import { getVarValue } from '../project';
 
 type Tprops_arrayPush = {
   args: any;
-  pass: { oldArr: string; newValue: string[]; passToFuncs: any };
+  pass: { arrPath: string; valuePath: string[] };
 };
 export const arrayPush = async (props: Tprops_arrayPush) => {
+  console.log('START ARRAY PUSH --------------');
+  console.log({ props });
+
   // ---------- set Caps Inputs
   const { args, pass } = props;
-  let { oldArr, newValue, passToFuncs } = pass;
+  let { arrPath, valuePath } = pass;
 
-  // ---------- set Old Array Arguments Values (If Exists)
-  if (typeof oldArr === 'string') {
-    const checkArgs = oldArr.startsWith('#');
-    if (checkArgs) oldArr = tools.argSel(args, oldArr);
-  }
+  const [hasOldArr, oldArr] = getVarValue(arrPath) as [boolean, any[]];
+  console.log({ oldArr });
+  const [hasNewValue, newValue] = getVarValue(valuePath) as [boolean, any[]];
+  console.log({ newValue });
 
-  // ---------- set New Value Arguments Values (If Exists)
-  if (typeof newValue === 'string') {
-    const checkArgs = newValue.startsWith('#');
-    if (checkArgs) newValue = tools.argSel(args, newValue);
-  }
+  //   if (hasVar) userElProps[keyProp] = varValue;
+  //   if (!hasVar) userElProps[keyProp] = valueProp;
 
-  // ---------- set Old Array Variables Values (If Exists)
-  const [condOld, oldVal] = tools.getVarValue(oldArr, 'noComponent');
-  if (condOld) oldArr = oldVal;
-
-  // ---------- set Old Array Variables Values (If Exists)
-  const [condNewVal, newValVar] = tools.getVarValue(newValue, 'noComponent');
-  if (condNewVal) newValue = newValVar;
-
-  const oldLength = oldArr?.length ?? 0;
-  console.log({ oldLength });
-  const newIdx = oldLength;
-  const defaultObj = { id: newIdx, name: 'name' + '_' + newIdx };
-  const condDefault = newValue === 'noName';
-  const condNewValue = condDefault ? defaultObj : newValue;
-
-  const newArr = [];
+  const newArr: any[] = [];
+  console.log({ newArr });
   newArr.push(...oldArr);
-  newArr.push(condNewValue);
+  newArr.push(newValue);
 
+  console.log({ newValue });
+  console.log('FINISH ARRAY PUSH --------------');
   // ---------- set New Data
-  for (const currFunc of passToFuncs) await currFunc(newArr, args);
+  return newArr;
 };
-
