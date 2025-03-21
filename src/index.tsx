@@ -535,28 +535,13 @@ async (...args) =>
             styles:[`{ flex: 1,  padding: 20 }`],
 
             functions:[()=>{}],            childrenItems:[
-        (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [{}],
-
-          stylesArray: [{
-                color: 'black',
-                fontSize: 14,
-                // fontSize: '20px',<= #ATTENTION: Native ERROR! No string!
-              }],
-
-          path: [`sc3.forms.form1.name`],
-
-          funcsArray: [() => {}],
-
-          args,
-        }}/>, 
         (...args:any) => <Elements.Text pass={{
           arrProps: [
             '{}'
           ],
 
           arrStyles: [
-            { color: 'black', fontSize: 12, }
+            `{ fontSize: 16, fontWeight: "bold" }`
           ],
 
           children: [
