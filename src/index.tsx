@@ -213,11 +213,17 @@ async (...args) =>
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [async (...args) =>
+ arrFunctions: [
+async (...args) =>
         functions.setVar({ args, pass:{
-          keyPath: [`all.test1`],
+          keyPath: [`sc4.selectedData`],
           value: [`$arg_full`]
-        }})]
+        }}), 
+        (...args) => {
+          // ---------- get Function from A_Project Scope
+          return tools.goTo("sc4");
+        }
+        ]
  , trigger: 'on press'
 }})],            childrenItems:[
         (...args:any) => <Elements.Text pass={{
@@ -528,7 +534,8 @@ async (...args) =>
 
             styles:[`{ flex: 1,  padding: 20 }`],
 
-            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.IptTxtEdit pass={{
+            functions:[()=>{}],            childrenItems:[
+        (...args:any) => <Elements.IptTxtEdit pass={{
           propsArray: [{}],
 
           stylesArray: [{
@@ -542,6 +549,37 @@ async (...args) =>
           funcsArray: [() => {}],
 
           args,
+        }}/>, 
+        (...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `$var_sc4.selectedData.name`
+          ],
+
+          args,
+
+        }}/>, (...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `$var_sc4.selectedData.date`
+          ],
+
+          args,
+
         }}/>],
 
             args,
