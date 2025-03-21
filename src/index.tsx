@@ -209,7 +209,7 @@ async (...args) =>
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
 
-            styles:[`{ flexDirection: "row", alignItems: "center" }`],
+            styles:[`{ flexDirection: "row", alignItems: "center", padding: 2 }`],
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
@@ -235,7 +235,19 @@ async (...args) =>
 
           args,
 
-        }}/>, (...args:any) => <Elements.Text pass={{
+        }}/>, 
+        
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{ width: 20, heitgh: 1 }`],
+
+            functions:[()=>{}],            childrenItems:[() =><></>],
+
+            args,
+          }}/>
+        , (...args:any) => <Elements.Text pass={{
           arrProps: [
             '{}'
           ],
