@@ -541,7 +541,7 @@ async (...args) =>
           ],
 
           arrStyles: [
-            `{ fontSize: 16, fontWeight: 600 }`
+            `{ fontSize: 14 }`
           ],
 
           children: [
