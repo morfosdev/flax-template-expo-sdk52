@@ -269,10 +269,13 @@ async (...args) =>
         
           ],
 
-      styles:[`{ backgroundColor: "rgb(255, 255, 255)",
+      styles:[`{ 
+    backgroundColor: "#FFF",
     justifyContent: "flex-start",
     minHeight: 22,
-    width: "100%"
+    width: "100%",
+    borderTopWidth: 1,
+    borderTopColor: "#CCC",
 }`],    args,
         }}/>, 
         
