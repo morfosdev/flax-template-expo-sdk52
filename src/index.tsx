@@ -160,7 +160,8 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [async (...args) =>
+ arrFunctions: [
+async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.lists.lst2`],
           value: [((...args) =>
@@ -169,6 +170,10 @@
  valuePath: "$var_sc3.forms.form1",
 
  }}))()]
+        }}), async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`sc3.forms.form1`],
+          value: [{}]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
