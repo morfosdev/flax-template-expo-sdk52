@@ -276,6 +276,7 @@ async (...args) =>
     width: "100%",
     borderTopWidth: 1,
     borderTopColor: "#CCC",
+    marginTop: 10
 }`],    args,
         }}/>, 
         
