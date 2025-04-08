@@ -6,4 +6,4 @@ export { Text } from './Text';
 export { FlatList2 } from './FlatList2';
 export { Loader } from './Loader';
 export { IptTxtEdit } from './IptTxtEdit';
-export { SvgView1 } from './SvgView1';
+// export { SvgView1 } from './SvgView1';
