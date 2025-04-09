@@ -48,7 +48,11 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => console.log("Cliquei aqui")]
+ arrFunctions: [() => {
+   const var1 = 10;
+   const var2 = minutos
+   console.log("Cliquei aqui", var1 + var2)
+}]
  , trigger: 'on press'
 }})],            childrenItems:[() =><></>],
 
