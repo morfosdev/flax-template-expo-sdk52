@@ -46,7 +46,11 @@
 
             styles:[`{ width: 50, height: 50, backgroundColor: "#fff" }`],
 
-            functions:[()=>{}],            childrenItems:[() =><></>],
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [()=>{}]
+ , trigger: 'on init'
+}})],            childrenItems:[() =><></>],
 
             args,
           }}/>
