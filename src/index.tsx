@@ -48,13 +48,28 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => {
-   const var1 = 10;
-   const var2 = "minutos";
-   console.log("Tempo:", var1 + var2)
-}]
+ arrFunctions: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`all.newValue`],
+          value: [12]
+        }})]
  , trigger: 'on press'
-}})],            childrenItems:[() =><></>],
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `$var_all.newValue`
+          ],
+
+          args,
+
+        }}/>],
 
             args,
           }}/>
