@@ -1133,7 +1133,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "()=>{}",
-              "capsIptCapsTypesToAdd": ["function","custom capsule"]
+              "capsIptCapsTypesToAdd": ["function"]
             }
           },
           "ccc_funcGroup-1": {

@@ -49,7 +49,7 @@
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [()=>{}]
- , trigger: 'on init'
+ , trigger: 'on press'
 }})],            childrenItems:[() =><></>],
 
             args,
