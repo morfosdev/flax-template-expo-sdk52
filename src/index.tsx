@@ -52,7 +52,7 @@
 () => console.log({tools}), async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.newValue`],
-          value: [(( ) => tools.base.project.getCtData( "all.colors.primary" ))( )]
+          value: [(( ) => tools.getCtData( "all.colors.primary" ))( )]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
