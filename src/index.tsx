@@ -51,7 +51,7 @@
  arrFunctions: [async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.newValue`],
-          value: [(() => getStlValues( [ '{color: "red"} ' ]))()]
+          value: [(() => getCtData( "ct.all.colors.primary" ))()]
         }})]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
