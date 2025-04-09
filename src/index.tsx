@@ -48,7 +48,8 @@
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [async (...args) =>
+ arrFunctions: [
+() => console.log({tools}), async (...args) =>
         functions.setVar({ args, pass:{
           keyPath: [`all.newValue`],
           value: [(( ) => tools.base.project.getCtData( "all.colors.primary" ))( )]
