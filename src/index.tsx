@@ -50,8 +50,8 @@
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
    const var1 = 10;
-   const var2 = "minutos"
-   console.log("Cliquei aqui", var1 + var2)
+   const var2 = "minutos";
+   console.log("Tempo:", var1 + var2)
 }]
  , trigger: 'on press'
 }})],            childrenItems:[() =><></>],
