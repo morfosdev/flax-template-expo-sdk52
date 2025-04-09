@@ -1,4 +1,3 @@
-
 {
   "sss_dirSystem": {
     "capsCodeInfo": {
@@ -1133,7 +1132,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "()=>{}",
-              "capsIptCapsTypesToAdd": ["function"]
+              "capsIptCapsTypesToAdd": ["function", "custom capsule"]
             }
           },
           "ccc_funcGroup-1": {
@@ -2082,7 +2081,8 @@
               "capsIptCapsTypesToAdd": [
                 "string process",
                 "free value",
-                "value process"
+                "value process",
+                "custom capsule"
               ]
             }
           }
