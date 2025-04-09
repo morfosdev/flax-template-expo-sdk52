@@ -1,4 +1,3 @@
-
 {
   "sss_dirSystem": {
     "capsCodeInfo": {
@@ -1133,7 +1132,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "()=>{}",
-              "capsIptCapsTypesToAdd": ["function"]
+              "capsIptCapsTypesToAdd": ["function", "custom capsule"]
             }
           },
           "ccc_funcGroup-1": {
@@ -1149,6 +1148,23 @@
               "capsIptTxtLabel": {
                 "pt-br": "Event",
                 "en": "Event"
+              }
+            },
+            "capsIptPosition": "0"
+          },
+          "ccc_funcGroup-2": {
+            "capsIptRemoved": false,
+            "capsIptCodeID": "ccc_funcGroup-2",
+            "capsIptType": "text",
+            "capsIptTxtInfo": {
+              "capsIptTxtDescription": {
+                "pt-br": "",
+                "en": ""
+              },
+              "capsIptTxtDfValue": "",
+              "capsIptTxtLabel": {
+                "pt-br": "Var Path",
+                "en": "Var Path"
               }
             },
             "capsIptPosition": "0"
@@ -1684,7 +1700,7 @@
                 "en": ""
               },
               "capsIptCapsDfCode": "() => {}",
-              "capsIptCapsTypesToAdd": ["function", "customs"]
+              "capsIptCapsTypesToAdd": ["function", "custom capsule"]
             }
           }
         },
@@ -1769,7 +1785,7 @@
           "pt-br": "Usada para \"pegar\" documentos específicos de acordo com a instrução fornecida.",
           "en": ""
         },
-        "capsCodeTypes": ["customs", "function", "firestore", "where"],
+        "capsCodeTypes": ["custom capsule", "function", "firestore", "where"],
         "capsCodeText": "async (...args) =>\n        functions.firebase.where({ args, pass:{\n            fbInit: [!#!firestore init path!#!],\n            arrRefStrings: [!#!array firestore reference!#!],\n            arrWhere: [!#!where params!#!],\n            arrFuncs: [!#!functions return!#!],\n        }})",
         "capsCodeInputs": {
           "ccc_fireWhere-0": {
@@ -1843,11 +1859,10 @@
               "capsIptCapsDfCode": "() => {}",
               "capsIptCapsTypesToAdd": [
                 "setVar",
-                "console log",
                 "goTo",
                 "condition",
                 "func Group",
-                "customs"
+                "custom capsule"
               ]
             }
           }
