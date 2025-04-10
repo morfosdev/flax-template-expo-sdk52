@@ -81,7 +81,7 @@
           ],
 
           children: [
-            `yellow`
+            `blue`
           ],
 
           args,
