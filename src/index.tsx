@@ -65,7 +65,8 @@
           ],
 
           children: [
-            `$var_all.newValue`
+            
+        `$var_all.newValue`, `color`
           ],
 
           args,
