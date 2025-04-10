@@ -55,7 +55,8 @@
           value: [(( ) => "cor:" + tools.getCtData( "all.colors.primary" ))( )]
         }})]
  , trigger: 'on press'
-}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+}})],            childrenItems:[
+        (...args:any) => <Elements.Text pass={{
           arrProps: [
             '{}'
           ],
@@ -66,6 +67,21 @@
 
           children: [
             `$var_all.newValue`
+          ],
+
+          args,
+
+        }}/>, (...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `blue`
           ],
 
           args,
