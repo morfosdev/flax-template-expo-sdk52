@@ -70,8 +70,7 @@
 
           arrStyles: [
             `{
-  color: "#3b88ff",
-  fontWeight: "bold",
+  color: "#3b88ff"
 }`
           ],
 
