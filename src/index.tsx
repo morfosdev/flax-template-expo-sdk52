@@ -70,7 +70,7 @@
 
           arrStyles: [
             `{
-  color: "#3b88ff"
+  color: "red"
 }`
           ],
 
