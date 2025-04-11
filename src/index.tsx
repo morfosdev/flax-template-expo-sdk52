@@ -71,8 +71,7 @@
           arrStyles: [
             `{
   color: "#FFF",
-  textAlign: "center",
-  fontWeight: 600,
+  textAlign: "center"
 }`
           ],
 
