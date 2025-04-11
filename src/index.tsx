@@ -72,7 +72,7 @@
             `{
   color: "#FFF",
   textAlign: "center",
-  fontWeight: "bold",
+  fontWeight: 600,
 }`
           ],
 
