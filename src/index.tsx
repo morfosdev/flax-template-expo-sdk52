@@ -69,7 +69,7 @@
           ],
 
           arrStyles: [
-            { color: 'black', fontSize: 12, }
+            `{ color: "#ffffff" }`
           ],
 
           children: [
