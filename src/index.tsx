@@ -69,7 +69,10 @@
           ],
 
           arrStyles: [
-            ``
+            `{
+  color: "#3b88ff",
+  fontWeight: "bold",
+}`
           ],
 
           children: [
