@@ -2189,7 +2189,7 @@
           "en": "Custom Capsule"
         },
         "capsDescription": { "pt-br": "", "en": "" },
-        "capsCodeTypes": ["custom capsule"],
+        "capsCodeTypes": ["custom capsule", "function", "Elemento de Tela"],
         "capsCodeText": "!#!custom capsule!#!",
         "capsCodeVersionID": "1",
         "capsCodeInputs": {
