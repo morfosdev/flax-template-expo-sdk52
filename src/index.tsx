@@ -56,11 +56,26 @@
             args,
           }}/>
         , 
-        () => {
-	const [sttNumber, setNumber] = React.useState(0);
+        (...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{ color: "red" }`
+          ],
+
+          children: [
+            "Escreva..."
+          ],
+
+          args,
+
+        }}/>, () => {
+	const [sttNumber, setNumber] = React.useState(10);
 
 	const style_1 = {
-		backgroundColor: "#CCC",
+		backgroundColor: "#FFF",
 		flexDirection: "row",
 		flex: 1,
 		width: 200,
@@ -69,7 +84,7 @@
 	};
 
 	const style_2 = {
-		backgroundColor: "red",
+		backgroundColor: "#0064FE",
 		alignItems: "center",
 		justifyContent: "center",
 		borderRadius: 3,
@@ -99,22 +114,7 @@
 			</RN.Pressable>
 		</RN.View>
 	);
-}, (...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            `{ color: "red" }`
-          ],
-
-          children: [
-            "Escreva..."
-          ],
-
-          args,
-
-        }}/>],
+}],
 
           functions:[()=>{}],
 
