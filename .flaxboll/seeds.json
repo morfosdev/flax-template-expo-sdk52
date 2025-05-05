@@ -1,3 +1,4 @@
+
 {
   "sss_dirSystem": {
     "capsCodeInfo": {
@@ -2188,7 +2189,7 @@
           "en": "Custom Capsule"
         },
         "capsDescription": { "pt-br": "", "en": "" },
-        "capsCodeTypes": ["custom capsule", "Elemento de Tela", "function"],
+        "capsCodeTypes": ["custom capsule"],
         "capsCodeText": "!#!custom capsule!#!",
         "capsCodeVersionID": "1",
         "capsCodeInputs": {

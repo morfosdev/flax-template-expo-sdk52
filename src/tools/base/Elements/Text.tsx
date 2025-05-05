@@ -5,7 +5,7 @@ import JSON5 from 'json5';
 import { Text as RNText } from 'react-native';
 
 // ---------- import Local Tools
-import { getStlValues, pathSel, getVarValue } from '../project';
+import { mapElements, pathSel, getVarValue } from '../project';
 import { useData } from '../../..';
 
 type Tprops = {
@@ -51,11 +51,8 @@ export const Text = (props: Tprops) => {
     }
   }
 
-  // ---------- set Variables Styles (If Exists)
-  const stl = getStlValues(arrStyles);
-
   const allProps = {
-    style: stl,
+    style: arrStyles,
     children,
 
     ...userElProps,
