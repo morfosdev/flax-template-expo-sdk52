@@ -75,7 +75,7 @@
 	const [sttNumber, setNumber] = React.useState(10);
 
 	const style_1 = {
-		backgroundColor: "#FFF",
+		backgroundColor: "yellow",
 		flexDirection: "row",
 		flex: 1,
 		width: 200,
